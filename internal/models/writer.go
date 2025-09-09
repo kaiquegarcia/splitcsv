@@ -45,7 +45,7 @@ func (w *writer) close() {
 
 func (w *writer) createOutputFile() bool {
 	if w.currentOutputFile != nil {
-		w.close()
+		w.currentOutputFile.Close()
 	}
 
 	outputFile := fmt.Sprintf(w.input.OutputFilePathPattern, w.fileCounter)
